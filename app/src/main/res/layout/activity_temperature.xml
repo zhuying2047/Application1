@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".TemperatureActivity">
+
+    <EditText
+        android:id="@+id/inp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="24dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/inp_tem"
+        android:inputType="number"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/output"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="55dp"
+        android:text=""
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/btn_f2c"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:onClick="btnConvert1"
+        android:text="@string/btn_convert1" />
+
+    <Button
+        android:id="@+id/btn_c2f"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="btnConvert2"
+        android:text="@string/btn_convert2" />
+
+</LinearLayout>
