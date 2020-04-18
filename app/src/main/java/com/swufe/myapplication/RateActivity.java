@@ -71,7 +71,7 @@ public class RateActivity extends AppCompatActivity implements Runnable {
         String todayStr2 = formatter.format(currentTime);
 
         if(!todaystr.equals(todayStr2)){
-            //开启子线程
+            //开启子线程。。。
             Thread t = new Thread(this);   //this代表要运行当前对象RateActivity的run()方法
             t.start();                            //调用子线程，就会去调用RateActivity的run()方法
 
