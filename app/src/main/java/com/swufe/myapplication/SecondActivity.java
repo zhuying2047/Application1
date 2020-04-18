@@ -5,21 +5,43 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class SecondActivity extends AppCompatActivity {
 
-    TextView score;
-    TextView score2;
+    private final String TAG = "SecondActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
-        score = findViewById(R.id.score);
-        score2 = findViewById(R.id.score2);
+
     }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        String scorea = ((TextView)findViewById(R.id.score)).getText().toString();
+        String scoreb = ((TextView)findViewById(R.id.score2)).getText().toString();
+
+        Log.i(TAG,"onSaveInstanceState: ");
+        outState.putString("teama_score",scorea);
+        outState.putString("teamb_score",scoreb);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        String scorea = savedInstanceState.getString("teama_score");
+        String scoreb = savedInstanceState.getString("teamb_score");
+
+        Log.i(TAG,"onRestoreInstanceState: ");
+        ((TextView)findViewById(R.id.score)).setText(scorea);
+        ((TextView)findViewById(R.id.score2)).setText(scoreb);
+    }
+
     public void btnAdd1(View btn){
         if(btn.getId()==R.id.btn_1){
             showScore(1);
@@ -45,20 +67,22 @@ public class SecondActivity extends AppCompatActivity {
     }
 
     public void btnReset(View btn){
-        score.setText("0");
-        score2.setText("0");
+        ((TextView)findViewById(R.id.score)).setText("0");
+        ((TextView)findViewById(R.id.score2)).setText("0");
     }
 
     private void showScore(int inc){
         Log.i("show","inc=" + inc);
-        String oldScore = (String) score.getText();
+        TextView out = findViewById(R.id.score);
+        String oldScore = (String) out.getText();
         int newScore = Integer.parseInt(oldScore) + inc;
-        score.setText("" + newScore);
+        out.setText("" + newScore);
     }
     private void showScore2(int inc){
         Log.i("show","inc=" + inc);
-        String oldScore = (String) score2.getText();
+        TextView out = findViewById(R.id.score2);
+        String oldScore = (String) out.getText();
         int newScore = Integer.parseInt(oldScore) + inc;
-        score2.setText("" + newScore);
+        out.setText("" + newScore);
     }
 }

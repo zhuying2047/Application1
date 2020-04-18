@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Temperature</string>
+    <string name="app_name">Rate</string>
     <string name="hello">Happy Birthday!</string>
     <string name="from">Your Julie</string>
     <string name="label_add1">+1 point</string>
