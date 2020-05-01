@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".MyListActivity"></activity>
+        <activity android:name=".MyList2Activity"></activity>
+        <activity android:name=".MyListActivity" />
         <activity
             android:name=".RateListActivity"
             android:label="@string/title_activity_rate_list"
