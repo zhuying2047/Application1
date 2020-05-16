@@ -42,32 +42,6 @@ public class ConfigActivity extends AppCompatActivity {
 
     }
 
-//    @Override
-//    protected void onSaveInstanceState(@NonNull Bundle outState) {
-//        super.onSaveInstanceState(outState);
-//        String dollarText1 = dollarText.getText().toString();
-//        String euroText1 =euroText.getText().toString();
-//        String wonText1 = wonText.getText().toString();
-//
-//        Log.i(TAG,"onSaveInstanceState: ");
-//        outState.putString("dollarText",dollarText1);
-//        outState.putString("euroText",euroText1);
-//        outState.putString("wonText",wonText1);
-//    }
-//
-//    @Override
-//    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
-//        super.onRestoreInstanceState(savedInstanceState);
-//        String dollarText1 = savedInstanceState.getString("dollarText");
-//        String euroText1 = savedInstanceState.getString("euroText");
-//        String wonText1 = savedInstanceState.getString("wonText");
-//
-//        Log.i(TAG,"onRestoreInstanceState: ");
-//        dollarText.setText(dollarText1);
-//        euroText.setText(euroText1);
-//        wonText.setText(wonText1);
-//    }
-
     public void save(View btn){
         Log.i("cfg","save: ");
         //获取新的值
